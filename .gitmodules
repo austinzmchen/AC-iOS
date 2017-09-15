@@ -1,3 +1,6 @@
 [submodule "UI/ColorMatchTabs"]
 	path = UI/ColorMatchTabs
 	url = https://github.com/austinzmchen/ColorMatchTabs.git
+[submodule "UI/RZTransitions"]
+	path = UI/RZTransitions
+	url = https://github.com/austinzmchen/RZTransitions.git
