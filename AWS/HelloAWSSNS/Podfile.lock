@@ -1,0 +1,19 @@
+PODS:
+  - AWSCognito (2.6.0):
+    - AWSCore (= 2.6.0)
+  - AWSCore (2.6.0)
+  - AWSSNS (2.6.0):
+    - AWSCore (= 2.6.0)
+
+DEPENDENCIES:
+  - AWSCognito
+  - AWSSNS
+
+SPEC CHECKSUMS:
+  AWSCognito: 7f32fd01698928c8320def74db10ca62cab2daef
+  AWSCore: a232d9a402ac11d76f3d87222a3f777e81b85abf
+  AWSSNS: b4c983283c112fde7ccd66a44740279dbef0bb9a
+
+PODFILE CHECKSUM: 87bd257094efbc1365d57c677607a080a60194a5
+
+COCOAPODS: 1.2.1
