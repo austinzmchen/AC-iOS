@@ -7,3 +7,6 @@
 [submodule "UI/CustomPageTabs"]
 	path = UI/CustomPageTabs
 	url = git@github.com:austinzmchen/CustomPageTabs.git
+[submodule "UI/HelloDelegateProxy"]
+	path = UI/HelloDelegateProxy
+	url = git@github.com:austinzmchen/HelloDelegateProxy.git
