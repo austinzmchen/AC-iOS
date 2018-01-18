@@ -6,4 +6,4 @@
 	url = https://github.com/austinzmchen/RZTransitions.git
 [submodule "UI/CustomPageTabs"]
 	path = UI/CustomPageTabs
-	url = https://github.com/austinzmchen/CustomPageTabs.git
+	url = git@github.com:austinzmchen/CustomPageTabs.git
