@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='HighOrder &amp; Curry'/>
+        <page name='Lens &amp; Prism'/>
+        <page name='Basics'/>
+        <page name='Optional_map_flatMap'/>
+        <page name='FlatMap'/>
+        <page name='Custom_map_flatMap'/>
+    </pages>
+</playground>

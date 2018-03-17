@@ -14,7 +14,6 @@ let s1 = sections.map{ section in
         return String(row)
     }
 }
-
 print( Array(s1.joined()) )
 
 let s2 = sections.flatMap{ section in
@@ -22,7 +21,6 @@ let s2 = sections.flatMap{ section in
         return String(row)
     }
 }
-
 print(s2)
 
 // example 2
@@ -42,11 +40,11 @@ let users = [
         Pet(type: "Dog", doctors: ["Bob", "Luke"]),
         Pet(type: "Snake", doctors: ["Kim", "John"]),
         Pet(type: "Bird", doctors: ["Marry"])
-    ]),
+        ]),
     User(name: "Jason", pets: [
         Pet(type: "Cat", doctors: ["Austin", "Ed"]),
         Pet(type: "Monkey", doctors: ["Mei", "David"])
-    ])
+        ])
 ]
 
 let allUserPets = users.flatMap {
@@ -71,4 +69,3 @@ var allDocs2: [String] = users.flatMap {
 }
 
 print(allDocs2)
-

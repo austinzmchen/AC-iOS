@@ -2,7 +2,7 @@
 
 import Foundation
 
-let example1 = {
+_ = {
     struct Dog {
         func eat(_ food: String) -> String {
             let r = "ate" + food
@@ -20,7 +20,7 @@ let example1 = {
     eat1("Dog food2")
 }()
 
-let example2 = {
+_ = {
     let xs = [1,2,3]
     let ys = ["A","B","C"]
     
@@ -37,6 +37,3 @@ let example2 = {
     dump(zs2)
 }()
 
-let example3 = {
-    
-}()

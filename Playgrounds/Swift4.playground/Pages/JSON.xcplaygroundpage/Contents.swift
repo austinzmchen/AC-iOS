@@ -24,7 +24,7 @@ let example1 = {
             "speed": 100
         }
     """
-
+    
     struct Starship_Simple: Codable {
         var name: String
         var weight: Float
@@ -32,36 +32,36 @@ let example1 = {
         var crews: [Crew]
         var speed: Float
     }
-
+    
     struct Starship: Codable {
         var name: String
         var weight: Float
         var capitan: Crew
         var crews: [Crew]
-
+        
         var capitanAge: Float
-
+        
         enum CodingKeys: String, CodingKey {
             case name, weight, capitan, crews, capitanAge = "speed"
         }
     }
-
+    
     struct Crew: Codable {
         var name: String
         var age: Int
     }
-
+    
     // encode
     let crew3 = Crew(name: "Crew Three", age: 22)
     let encoded = try! JSONEncoder().encode(crew3)
-
+    
     // decode
     let starship0 = try! JSONDecoder().decode(Starship_Simple.self, from: starshipStr.data(using: .utf8)!)
     print(starship0)
-
+    
     let starship = try! JSONDecoder().decode(Starship.self, from: starshipStr.data(using: .utf8)!)
     print(starship)
-
+    
     // keypath
     let capitanAge = starship[keyPath: \Starship.capitan.age]
 }()
@@ -78,30 +78,30 @@ let example2 = {
             var isFavorite: Bool?
             var isWatchlist: Bool?
         }
-
+        
         var name: String
         var detail: Detail
-
+        
         struct CodingKeys: CodingKey {
             var intValue: Int?
             var stringValue: String
-
+            
             init?(intValue: Int) { self.intValue = intValue; self.stringValue = "\(intValue)" }
             init?(stringValue: String) { self.stringValue = stringValue }
-
+            
             static let kName = CodingKeys(stringValue: "categoryName")!
             static func makeKey(name: String) -> CodingKeys {
                 return CodingKeys(stringValue: name)!
             }
         }
-
+        
         init(from coder: Decoder) throws {
             let container = try coder.container(keyedBy: CodingKeys.self)
             self.name = try container.decode(String.self, forKey: .kName)
             self.detail = try container.decode([Detail].self, forKey: .makeKey(name: name)).first!
         }
     }
-
+    
     let jsonData = """
       [
         {
@@ -128,7 +128,7 @@ let example2 = {
         }
       ]
     """.data(using: .utf8)!
-
+    
     let categories = try! JSONDecoder().decode([Category].self, from: jsonData)
     print(categories)
 }()
@@ -149,13 +149,13 @@ let example3 = {
         }
     }
     """
-
+    
     struct UpdatedIntent: Encodable {
         var name: String
         var confirmationStatus: String
         var slots: Slots
     }
-
+    
     struct Slots: Encodable {
         var _slots: [Slot]
         
@@ -166,7 +166,7 @@ let example3 = {
             }
         }
     }
-
+    
     struct Slot: Encodable {
         var name: String
         var confirmationStatus: String
@@ -178,7 +178,7 @@ let example3 = {
             self.value = value
         }
     }
-
+    
     struct CodingKeys2: CodingKey {
         var intValue: Int?
         var stringValue: String
@@ -191,14 +191,15 @@ let example3 = {
             return CodingKeys2(stringValue: name)!
         }
     }
-
+    
     let s1 = Slot(name: "sendToWho", confirmationStatus: "NONE", value: "draw")
     let s2 = Slot(name: "messageType", confirmationStatus: "NONE", value: nil)
     let ss = Slots(_slots: [s1, s2])
-
+    
     let ui = UpdatedIntent(name: "intent_all", confirmationStatus: "NONE", slots: ss)
-
+    
     let d = try! JSONEncoder().encode(ui)
     let ds = String(data: d, encoding: .utf8)
     print(ds)
 }()
+
